@@ -1,0 +1,66 @@
+@use '../abstracts' as *;
+
+.slider {
+  --height-item: 410px;
+  --width-item: 280px;
+  --gap-dots: 12px;
+  --margin-block-dots: 20px 0;
+  --padding-inline-track: 20px;
+  --object-position-g4: -460px;
+
+  overflow: hidden;
+
+  &__track {
+    display: flex;
+    gap: 20px;
+    padding-inline: var(--padding-inline-track);
+    transition: transform $transition-duration-normal;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: var(--width-item);
+    height: var(--height-item);
+  }
+
+  &__item--fit-position-g4 {
+    object-position: var(--object-position-g4);
+  }
+
+  &__item--cover {
+    object-fit: cover;
+  }
+
+  &__dots {
+    display: flex;
+    gap: var(--gap-dots);
+    justify-content: center;
+    margin-block: var(--margin-block-dots);
+  }
+
+  &__dot {
+    cursor: pointer;
+
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background-color: #d9d9d9;
+
+    &--active {
+      background-color: #1a5a4c;
+    }
+  }
+
+  @include respond-to('md') {
+    --width-item: 340px;
+    --height-item: 543px;
+    --gap-dots: 22px;
+    --margin-block-dots: 32px 0;
+    --padding-inline-track: 34px;
+    --object-position-g4: -610px;
+  }
+}
