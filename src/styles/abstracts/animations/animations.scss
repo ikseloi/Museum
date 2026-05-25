@@ -5,6 +5,9 @@
     color $transition-duration-normal,
     transform $transition-duration-normal;
 
+  transform: translateZ(0);
+  will-change: transform;
+
   &:hover {
     transform: scale(1.1);
     color: var(--color-secondary);
