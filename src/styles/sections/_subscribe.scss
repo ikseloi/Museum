@@ -26,6 +26,7 @@
   background-size: cover;
 
   &__title {
+    color: $clr-white;
     text-align: var(--text-align-description);
   }
 

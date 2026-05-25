@@ -6,7 +6,7 @@
   --justify-items-menu: center;
   --padding-top: 8px;
   --font-size-logo: 30px;
-  --text-align-logo: left;
+  --transform-translate-x-logo: -35px;
 
   position: absolute;
   z-index: 10;
@@ -20,6 +20,8 @@
     align-items: center;
 
     .icon {
+      @extend %hover-scale-10-bg-primary;
+
       width: 1.5rem;
       height: 1.5rem;
     }
@@ -30,27 +32,34 @@
   }
 
   &__logo {
+    @extend %hover-primary-color;
+
+    transform: translateX(var(--transform-translate-x-logo));
+
     grid-column: var(--column-logo);
+
+    width: fit-content;
 
     font-family: $font-headings;
     font-size: var(--font-size-logo);
     font-weight: $fw-bold;
-    line-height: 0.91;
+    line-height: 1;
     color: var(--color-bg-accent);
-    text-align: var(--text-align-logo);
   }
 
   @include respond-to('md') {
     --column-menu: 1/4;
-    --column-logo: 4/6;
+    --column-logo: 5/5;
     --font-size-logo: 36px;
     --padding-top: 19px;
     --text-align-logo: center;
+    --transform-translate-x-logo: -60px;
   }
 
   @include respond-to('lg') {
-    --column-logo: 6/8;
+    --column-logo: 7/8;
     --font-size-logo: 36px;
     --padding-top: 19px;
+    --transform-translate-x-logo: -30px;
   }
 }

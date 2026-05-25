@@ -7,7 +7,7 @@
   }
 
   &__item {
-    @extend %hover-effect;
+    @extend %hover-effect-nav;
 
     width: max-content;
     line-height: 1;

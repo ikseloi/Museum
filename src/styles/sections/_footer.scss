@@ -24,6 +24,8 @@
   font-weight: $fw-regular;
 
   &__logo {
+    @extend %hover-primary-color;
+
     font-size: 36px;
     text-align: left;
   }
@@ -42,6 +44,10 @@
       width: 1.5rem;
       height: 1.5rem;
     }
+  }
+
+  &__social-link {
+    @extend %hover-effect-scale-20;
   }
 
   &__schedule {

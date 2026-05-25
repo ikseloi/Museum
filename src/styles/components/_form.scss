@@ -6,9 +6,12 @@
   --height-btn: 50px;
   --height-input: 50px;
   --padding-input: 16px;
+  --gap: 0;
+
+  @extend %hover-effect-form;
 
   display: flex;
-  gap: 16px;
+  gap: var(--gap);
 
   font-size: 14px;
   font-weight: $fw-regular;
@@ -18,7 +21,7 @@
     width: var(--width-input);
     height: var(--height-input);
     padding: var(--padding-input);
-    border-radius: 0;
+    border: none;
 
     font: inherit;
 
@@ -33,6 +36,7 @@
   }
 
   @include respond-to('md') {
+    --gap: 16px;
     --width-input: 374px;
     --width-btn: 70px;
     --height-input: 70px;

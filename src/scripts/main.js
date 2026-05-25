@@ -1,21 +1,33 @@
 'use strict';
 
 const track = document.querySelector('.slider__track');
-const sliderItem = document.querySelector('.slider__item');
 const dots = document.querySelectorAll('.slider__dot');
+const firstItem = document.querySelector('.slider__item');
 
-// const slideWidth = track.offsetWidth + 20;
-// const slideWidth = sliderItem.offsetWidth + 20;
-const slideWidth = sliderItem.offsetWidth === 280 ? 300 : 280;
+const updateActiveDot = () => {
+  const slideWidth = firstItem.offsetWidth + 20;
+  const currentIndex = Math.round(track.scrollLeft / slideWidth);
+
+  dots.forEach((dot) => dot.classList.remove('slider__dot--active'));
+
+  if (dots[currentIndex]) {
+    dots[currentIndex].classList.add('slider__dot--active');
+  }
+};
 
 dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  dot.addEventListener('click', (e) => {
+    e.preventDefault();
 
-    dots.forEach((item) => {
-      item.classList.remove('slider__dot--active');
+    const slideWidth = firstItem.offsetWidth + 20;
+
+    track.scrollTo({
+      left: slideWidth * index,
+      behavior: 'smooth',
     });
-
-    dot.classList.add('slider__dot--active');
   });
 });
+
+track.addEventListener('scroll', updateActiveDot);
+
+updateActiveDot();

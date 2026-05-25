@@ -8,7 +8,7 @@
   --column-title: 1/3;
   --column-btn: 1/3;
   --height-hero: auto;
-  --height-img: 300px;
+  --height-img: 100%;
   --height-button: 50px;
   --position-img: static;
   --padding-left-content: 0;
@@ -49,6 +49,8 @@
   }
 
   &__button {
+    @extend %hover-primary-bg-color-white;
+
     grid-column: var(--column-btn);
 
     width: var(--width-button);
@@ -101,8 +103,6 @@
     --column-title: 1/4;
     --column-img: 4/7;
     --column-btn: 1/4;
-    --height-img: 384px;
-    --height-hero: 384px;
     --height-button: 70px;
     --padding-left-content: #{$container-padding-md};
     --padding-top-content: 127px;
@@ -122,7 +122,6 @@
     --padding-left-content: #{$container-padding-lg};
     --padding-top-content: 206px;
     --margin-block-title: 0 89px;
-    --height-img: 655px;
     --height-hero: 655px;
   }
 }

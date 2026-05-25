@@ -1,9 +1,4 @@
-// .arrow-icon {
-//   background-image: url(../images/icons/carbon_arrow-up.svg);
-
-//   background-repeat: no-repeat;
-//   background-position: center;
-// }
+@use '../abstracts' as *;
 
 .icon {
   display: block;
@@ -23,7 +18,9 @@
   }
 
   &--menu {
-    background-image: url(../images/icons/burger-menu.svg);
+    @include icon-mask('burger-menu');
+
+    background-color: var(--color-text-hero);
   }
 
   &--chevron {
